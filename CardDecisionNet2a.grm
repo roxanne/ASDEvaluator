@@ -1,0 +1,86 @@
+($$ (
+  (1 nil Q5 '' '' 740 131)
+  (2 nil E1 '' '' 616 203)
+))
+
+(command:stack (
+  (1 nil ((which:deictic 2 668 275) (which:anaphoric 2 665 293)) nil '' 468 256)
+))
+
+(eachUsed:false (
+  (1 nil ((needs2orMore:false 1 448 48) (needs2orMore:true 1 449 111)) nil '' 343 41)
+))
+
+(eachUsed:true (
+  (1 nil ((needs2orMore:false 2 439 227) (which:quantified 2 448 277) (command:stack 1 441 243) (needs2orMore:true 2 450 295)) nil '' 326 216)
+))
+
+(lastCardAttendedTo:notNull (
+  (1 nil A1 '' '' 910 33)
+))
+
+(lastCardAttendedTo:null (
+  (1 nil Q5 '' '' 913 65)
+))
+
+(lastPilesAttendedTo:1 (
+  (1 nil A2 '' '' 765 168)
+))
+
+(lastType:card (
+  (1 nil ((number:singular 1 185 78) (number:plural 1 243 193)) nil '' 76 99)
+))
+
+(needs2orMore:false (
+  (1 nil ((which:deictic 1 593 36) (which:anaphoric 1 592 55) (which:quantified 1 593 74)) nil '' 460 42)
+  (2 nil ((which:deictic 2 677 259) (which:anaphoric 2 674 278)) nil '' 464 225)
+))
+
+(needs2orMore:true (
+  (1 nil ((structureType:null 2 596 175) ($$ 2 596 192)) nil '' 461 168)
+  (2 nil E1 '' '' 486 360)
+))
+
+(newCardIndicated:false (
+  (1 nil ((lastCardAttendedTo:notNull 1 893 51) (lastCardAttendedTo:null 1 894 67)) nil '' 736 55)
+  (2 nil A3A5 '' '' 914 312)
+  (3 nil Q5 '' '' 737 92)
+))
+
+(newCardIndicated:true (
+  (1 nil D1 '' '' 740 16)
+  (2 nil D3D4 '' '' 913 274)
+))
+
+(number:plural (
+  (1 nil ((needs2orMore:false 2 438 256) (which:deictic 2 591 284) (which:anaphoric 2 589 302) (which:quantified 2 447 306)) nil '' 328 274)
+))
+
+(number:singular (
+  (1 nil ((eachUsed:false 1 327 49) (eachUsed:true 1 318 136)) nil '' 212 43)
+))
+
+(structureType:card (
+  (1 T ((number:singular 1 173 139) (number:plural 1 231 254)) nil '' 20 221)
+))
+
+(structureType:null (
+  (1 T ((lastType:card 1 96 63)) nil '' 8 13)
+  (2 nil ((lastPilesAttendedTo:1 1 745 175)) nil '' 616 168)
+))
+
+(which:anaphoric (
+  (1 nil ((newCardIndicated:true 1 722 42) (newCardIndicated:false 1 720 61)) nil '' 605 54)
+  (2 nil ((newCardIndicated:true 2 889 302) (newCardIndicated:false 2 889 321)) nil '' 765 317)
+))
+
+(which:deictic (
+  (1 nil ((newCardIndicated:true 1 714 23) (newCardIndicated:false 1 712 42)) nil '' 607 16)
+  (2 nil ((newCardIndicated:true 2 882 284) (newCardIndicated:false 2 882 303)) nil '' 770 280)
+))
+
+(which:quantified (
+  (1 nil ((newCardIndicated:true 1 723 61) (newCardIndicated:false 3 721 99) ($$ 1 723 118)) nil '' 607 92)
+  (2 nil Q1Q2 '' '' 482 325)
+))
+

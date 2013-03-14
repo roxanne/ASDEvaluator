@@ -1,0 +1,189 @@
+($$ (
+  (1 nil NPD1 'features' '' 385 455)
+  (2 nil NPD2 'features' '' 1029 349)
+  (3 nil MAINCLAUSE 'features' 'cardgram_$$_3' 742 174)
+  (4 nil SENTENCE 'cardgram_$$_4_v' '' 188 58)
+  (5 nil NPD1 'features' '' 1059 96)
+))
+
+(ADVDIR (
+  (1 nil ((NPD 1 326 139) (ADVERB 2 269 168)) T 'cardgram_ADVDIR_1' 196 109)
+  (2 nil ((ADVERB 3 588 124) ($$ 3 642 152)) T 'cardgram_ADVDIR_2' 494 116)
+))
+
+(ADVERB (
+  (1 T ((ADVERB 1 33 134) (VERB 1 89 160)) T 'raiseFeaturesChecking' 7 153)
+  (2 nil ((ADVERB 2 319 195) (NPD 1 376 191)) T 'raiseFeaturesChecking' 293 214)
+  (3 nil ((ADVERB 3 659 99) ($$ 3 714 153)) T 'raiseFeaturesChecking' 633 118)
+))
+
+(all (
+  (1 T ((NPL 2 756 249) (of 1 829 277) (NPD1 2 907 248) ($$ 2 850 313)) T 'cardgram_all_1' 652 263)
+  (2 nil NPD 'features' 'cardgram_all_2' 1058 60)
+))
+
+(and (
+  (1 nil ((MAINCLAUSE 2 245 24)) T '' 188 17)
+))
+
+(card (
+  (1 T NSING '"card"' '' 30 9)
+))
+
+(cards (
+  (1 T NPL '"card"' '' 30 40)
+))
+
+(down (
+  (1 T ADVDIR '"down"' '' 352 8)
+  (2 nil ADVERB 'features' 'cardgram_down_2' 734 27)
+))
+
+(each (
+  (1 T ((NSING 2 773 471) (of 1 839 369) (one 2 778 449) ($$ 2 859 404)) T 'cardgram_each_1' 656 446)
+))
+
+(face (
+  (1 T ((down 2 703 33) (up 2 703 51)) nil '' 641 26)
+))
+
+(here (
+  (1 T ADVERB 'features' 'cardgram_here_1' 353 206)
+))
+
+(it (
+  (1 T ((all 2 998 61) ($$ 5 998 79)) nil 'cardgram_it_1' 925 48)
+))
+
+(MAINCLAUSE (
+  (1 T ((and 1 147 24) ($$ 4 147 44)) nil 'cardgram_MAINCLAUSE_1' 26 17)
+  (2 nil SENTENCE 'cardgram_MAINCLAUSE_2_v' 'cardgram_MAINCLAUSE_2' 276 17)
+))
+
+(next (
+  (1 T ADVERB 'features' 'cardgram_next_1' 513 9)
+))
+
+(now (
+  (1 T ADVERB 'features' 'cardgram_now_1' 514 43)
+))
+
+(NPD (
+  (1 nil ((ADVDIR 2 465 142) (ADVERB 3 535 143) ($$ 3 589 171)) T 'cardgram_NPD_1' 407 155)
+))
+
+(NPD1 (
+  (1 T NPD 'nodeValue' '' 29 270)
+  (2 nil NPD2 'features' 'raiseFeatures' 1144 220)
+))
+
+(NPD2 (
+  (1 T NPD 'nodeValue' '' 29 301)
+))
+
+(NPL (
+  (1 nil NPD1 'features' 'cardgram_NPL_1' 380 401)
+  (2 nil NPD2 'features' 'cardgram_NPL_2' 842 221)
+))
+
+(NSING (
+  (1 nil NPD1 'features' 'cardgram_NSING_1' 376 255)
+  (2 nil NPD2 'features' 'cardgram_NSING_2' 857 483)
+))
+
+(of (
+  (1 nil ((NPD1 2 1074 256)) T '' 988 278)
+))
+
+(one (
+  (1 nil ((NSING 1 305 306) ($$ 1 309 406)) T '' 207 344)
+  (2 nil ((of 1 940 365) ($$ 2 961 401)) nil '' 866 439)
+))
+
+(out (
+  (1 T ADVDIR '"out"' '' 352 39)
+))
+
+(over (
+  (1 T ADVDIR '"over"' '' 351 72)
+))
+
+(pile (
+  (1 T NSING 'cardgram_pile_1_v' '' 30 73)
+  (2 T VERB 'features' 'cardgram_pile_2' 185 9)
+))
+
+(piles (
+  (1 T NPL '"pile"' '' 29 107)
+))
+
+(separately (
+  (1 T ADVERB 'features' 'cardgram_separately_1' 351 271)
+))
+
+(shuffle (
+  (1 T VERB 'features' 'cardgram_shuffle_1' 185 40)
+))
+
+(spread (
+  (1 T VERB 'features' 'cardgram_spread_1' 186 73)
+))
+
+(stack (
+  (1 T VERB 'features' 'cardgram_stack_1' 187 106)
+  (2 T NSING '"pile"' '' 29 140)
+))
+
+(stacks (
+  (1 T NPL '"pile"' '' 29 170)
+))
+
+(that (
+  (1 T ((NSING 1 226 317) (one 1 141 361) ($$ 1 230 417)) T 'cardgram_that_1' 48 365)
+))
+
+(the (
+  (1 T ((NSING 1 228 261) (NPL 1 230 334)) T '' 56 254)
+))
+
+(them (
+  (1 T ((all 2 1007 76) ($$ 5 1008 94)) nil 'cardgram_them_1' 922 78)
+))
+
+(then (
+  (1 T ADVERB 'features' 'cardgram_then_1' 514 75)
+))
+
+(there (
+  (1 T ADVERB 'features' 'cardgram_there_1' 352 239)
+))
+
+(these (
+  (1 T ((NPL 1 229 429) ($$ 1 232 456)) T 'cardgram_these_1' 41 443)
+))
+
+(this (
+  (1 T ((one 1 142 347) (NSING 1 226 303) ($$ 1 231 403)) T 'cardgram_this_1' 50 337)
+))
+
+(those (
+  (1 T ((NPL 1 229 445) ($$ 1 232 472)) T 'cardgram_those_1' 41 475)
+))
+
+(together (
+  (1 T ADVERB 'features' 'cardgram_together_1' 352 302)
+))
+
+(turn (
+  (1 T VERB 'features' 'cardgram_turn_1' 187 140)
+))
+
+(up (
+  (1 T ADVDIR '"up"' '' 351 105)
+  (2 nil ADVERB 'features' 'cardgram_up_2' 734 62)
+))
+
+(VERB (
+  (1 T ((ADVDIR 1 175 138) (NPD 1 281 161) (ADVERB 2 224 190)) T 'cardgram_VERB_1' 118 153)
+))
+
