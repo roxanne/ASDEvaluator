@@ -646,19 +646,18 @@ addSeparator();
                 outputPane.copy();
             } else if (command.equals("Erase output pane")) {
                 outputPane.setText("");
-            } else if (command.equals("Open")) //evaluator.loadNewFile();
-            {
-                evaluator.initializeParse(true);
-            }// else if (command.equals("Exit")) {
-               // try {
-                    //evaluator.exitEvaluator();
-               // } catch {
-              // (       
-                     //   ClassNotFoundException |
-                     //  InstantiationException | 
-                     //  IllegalAccessException ex
-                        
-                      // ) 
+            } else {
+                if (command.equals("Open")) //evaluator.loadNewFile();
+                {
+                    evaluator.initializeParse(true);
+                } else {
+                    if (command.equals("Exit")) {
+                        evaluator.exitEvaluator();
+                    }
+
+                }
+            }
+            }
                         
                // }
            // }
@@ -666,7 +665,7 @@ addSeparator();
         
 
 
-}
+
 
       Evaluator evaluator;
       EvaluatorUI evaluatorwindow;//////////////////////////////////////////

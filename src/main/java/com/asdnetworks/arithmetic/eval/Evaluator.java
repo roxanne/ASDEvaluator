@@ -524,7 +524,7 @@ public class Evaluator
    
 
   // static final String GRAMMARFILE = "expression.grm";
-   static final String GRAMMARFILE = "http://www.asd-networks.com/grammars/expression.grm";
+   static final String GRAMMARFILE = "http://www.asdnetworks.com/grammars/expression.grm";
    static final String EXPECTEDTYPE = "EXPRESSION";
    static final int MAXSTEPS = 10000;
    static final String VERSION = "1.2";
@@ -547,9 +547,8 @@ public class Evaluator
    private String utterance = null;
 
     void exitEvaluator() {
-        throw new UnsupportedOperationException("Not yet implemented");
+       System.exit(0);
     }
- 
-    
+
 
 } // end class Evaluator
