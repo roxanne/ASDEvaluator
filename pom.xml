@@ -20,7 +20,73 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+        
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>webstart-maven-plugin</artifactId>
+                <version>1.0-alpha-1</version>
+            </plugin>
+            
+        <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jarsigner-plugin</artifactId>
+        <version>1.4</version>
+        <executions>
+          <execution>
+            <id>sign</id>
+            <goals>
+              <goal>sign</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <keystore>/home/roxanne/Dev/Certum/codesignstore</keystore>
+          <alias>codesigncert</alias>
+          <storepass>Woofdog1!</storepass>
+          <keypass>Woofdog1!</keypass>
+          <tsa>http://time.certum.pl</tsa>
+        </configuration>
+      </plugin>
+      
+        <plugin>
+       <groupId>org.codehaus.mojo</groupId>
+       <artifactId>webstart-maven-plugin</artifactId>
+       <version>1.0-alpha-1</version>
+       </plugin>
         </plugins>
+        <pluginManagement>
+    <plugins>
+       <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>webstart-maven-plugin</artifactId>
+         <!-- do not bind to install phase
+          <executions>
+           <execution>
+             <goals>
+               <goal>report</goal>
+             </goals>
+           </execution>
+          </executions>
+          -->
+          <configuration>
+           <jnlp>
+            <mainClass>de.timefinder.core.Startup</mainClass>
+           </jnlp>
+          <sign>
+           <keystore>/home/roxanne/Dev/Certum/codesignstore</keystore>
+           <keypass>Woofdog1!</keypass>
+           <storepass>Woofdog1!</storepass>
+           <storetype>jks</storetype>
+           <alias>codesigncert</alias>
+           <verify>true</verify>
+         </sign>
+        <verbose>true</verbose>
+      </configuration>
+     </plugin>
+   </plugins>
+  </pluginManagement>
+          
+          
     </build>
     <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
