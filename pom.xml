@@ -1,15 +1,30 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.asdnetworks</groupId>
-  <artifactId>ASDEvaluatorV1.8</artifactId>
-  <version>1.8-SNAPSHOT</version>
-  <packaging>jar</packaging>
+    <groupId>com.asdnetworks</groupId>
+    <artifactId>ASDEvaluatorV1.8</artifactId>
+    <version>1.8-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
-  <name>ASDEvaluatorV1.8</name>
-  <url>http://maven.apache.org</url>
+    <name>ASDEvaluatorV1.8</name>
+  
+    
+  
+    <url>https://www.asd-networks.com</url>
+    <description>
+        Evaluator uses semantic functions corresponding to nodes in the ASD grammar to compute the numerical values
+        of arithmetic expressions.
+    </description>
+
+  
+  
+  
+  
     <build>
+        
+        
+        
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -21,85 +36,196 @@
                 </configuration>
             </plugin>
         
+           
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jarsigner-plugin</artifactId>
+                <version>1.4</version>
+                <executions>
+                    <execution>
+                        <id>sign</id>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <keystore>/home/roxanne/Dev/Certum/codesignstore</keystore>
+                    <alias>codesigncert</alias>
+                    <storepass>Woofdog1!</storepass>
+                    <keypass>Woofdog1!</keypass>
+                    <tsa>http://time.certum.pl</tsa>
+                </configuration>
+            </plugin>
+      
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                                            
+                                            
+                        <manifest>
+                                                
+                                                
+                                                
+                            <mainClass>com.asdnetworks.arithmetic.Evaluator</mainClass>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                        </manifest>
+
+                                            
+                                            
+                                            
+                                            
+                        <manifestEntries>
+                                                    
+                            <Application-Name>ASDEvaluator</Application-Name>
+                            <Implementation-Build>${project.version}-r${buildNumber}</Implementation-Build>
+                            <Permissions>all-permissions</Permissions>
+                            <Codebase>https://www.asd-networks.com/prj_asd/deployment/</Codebase>
+
+                            <Trusted-Library>true</Trusted-Library>          
+                                                    
+                                                    
+                                                    
+                            <SplashScreen-Image>splash.png</SplashScreen-Image>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+        
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>webstart-maven-plugin</artifactId>
-                <version>1.0-alpha-1</version>
-            </plugin>
+                <version>1.0-beta-6</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>webstart-pack200-impl</artifactId>
+                        <version>1.0-beta-6</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>keytool-api-1.7</artifactId>
+                        <version>1.4</version>
+                    </dependency>
+                </dependencies>
+
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jnlp</goal>
+                        </goals>
+                    </execution>
+                </executions>
+          
+          
+          
+                <configuration>
+                    <excludeTransitive>false</excludeTransitive>
+                    <resourcesDirectory>${project.basedir}/src/main/jnlp/resources</resourcesDirectory>
+                    <!-- default value -->
+
+                    <!-- JNLP generation -->
             
-        <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jarsigner-plugin</artifactId>
-        <version>1.4</version>
-        <executions>
-          <execution>
-            <id>sign</id>
-            <goals>
-              <goal>sign</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <keystore>/home/roxanne/Dev/Certum/codesignstore</keystore>
-          <alias>codesigncert</alias>
-          <storepass>Woofdog1!</storepass>
-          <keypass>Woofdog1!</keypass>
-          <tsa>http://time.certum.pl</tsa>
-        </configuration>
-      </plugin>
-      
-        <plugin>
-       <groupId>org.codehaus.mojo</groupId>
-       <artifactId>webstart-maven-plugin</artifactId>
-       <version>1.0-alpha-1</version>
-       </plugin>
-        </plugins>
-        <pluginManagement>
-    <plugins>
-       <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>webstart-maven-plugin</artifactId>
-         <!-- do not bind to install phase
-          <executions>
-           <execution>
-             <goals>
-               <goal>report</goal>
-             </goals>
-           </execution>
-          </executions>
-          -->
-          <configuration>
-           <jnlp>
-            <mainClass>com.asdnetworks.arithmetic.eval.Evalutator</mainClass>
-           </jnlp>
-          <sign>
-           <keystore>/home/roxanne/Dev/Certum/codesignstore</keystore>
-           <keypass>Woofdog1!</keypass>
-           <storepass>Woofdog1!</storepass>
-           <storetype>jks</storetype>
-           <alias>codesigncert</alias>
-           <verify>true</verify>
-         </sign>
-        <verbose>true</verbose>
-      </configuration>
-     </plugin>
-   </plugins>
-  </pluginManagement>
-          
-          
+                    <jnlp>
+                        <inputTemplateResourcePath>${project.basedir}/src/main/jnlp</inputTemplateResourcePath>
+                        <inputTemplate>template.vm</inputTemplate>
+                        <outputFile>Evaluator.jnlp</outputFile>
+                        <mainClass>com.asdnetworks.arithmetic.eval.Evaluator</mainClass>
+
+                    </jnlp>
+            
+            
+                    <!-- SIGNING -->
+                    <!--
+                            defining this will automatically sign the jar and its
+                            dependencies, if necessary
+                    -->
+            
+            
+                    <sign>
+
+                        <keystore>/path/</keystore>
+                        <alias>codesigncert</alias>
+                        <storepass>pass</storepass>
+                        <keypass>pass</keypass>
+                        <verify>true</verify>
+              
+             
+
+                        <!-- KEYSTORE MANAGEMENT -->
+              
+                        <keystoreConfig>
+                            <delete>false</delete>
+                            <gen>false</gen>
+                        </keystoreConfig>
+                    </sign>
+            
+                    <gzip>false</gzip>
+                    <outputJarVersions>false</outputJarVersions>
+                    <unsignAlreadySignedJars>true</unsignAlreadySignedJars>
+                    <verbose>true</verbose>
+                </configuration>
+            </plugin>
+  
+        
+        
+
+            <!-- Deploy webstart -->
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>deploy</phase>
+                        <configuration>
+                            <tasks>
+                                <!--scp file="target/${pom.build.finalName}.zip"
+                                todir="modularity@mnode.org:basetools.org/figurate"
+                                keyfile="${user.home}/.ssh/id_rsa" passphrase="" / -->
+
+                                <!--sshexec host="mnode.org" username="modularity"
+                                keyfile="${user.home}/.ssh/id_rsa" passphrase=""
+                                command="rm -rf basetools.org/figurate/webstart/*; unzip -o basetools.org/figurate/${pom.build.finalName}.zip -d basetools.org/figurate/webstart" / -->
+                            </tasks>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.ant</groupId>
+                        <artifactId>ant-jsch</artifactId>
+                        <version>1.7.1</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
+
+        
+        
+        
+        
+        
+        
+        </plugins>      
     </build>
     <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
     <reporting>
         <plugins>
             <plugin>
